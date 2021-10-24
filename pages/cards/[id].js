@@ -1,19 +1,19 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../../styles/Card.module.css'
-import { getAllPostIds, getCardData } from '../../lib/cards'
+import { getAllCardIds, getCardData } from '../../lib/cards'
 import Card from '../../components/Card'
 
 export async function getStaticProps({ params }) {
-  const postData = await getCardData(params.id)
+  const cardData = await getCardData(params.id)
   return {
     props: {
-      postData
+      cardData
     }
   }
 }
 
-export default function CardPage(props) {
+export default function CardPage({ cardData }) {
     return (
         <div className={styles.container}>
         <Head>
@@ -23,7 +23,7 @@ export default function CardPage(props) {
         </Head>
               <main className={styles.main}>
               <h1 className={styles.title}>
-                Card #{props.postData.id} - {props.postData.name} the {props.postData.class}
+                Card #{cardData.id} - {cardData.name} the {cardData.class}
               </h1>
       
               <p className={styles.description}>
@@ -31,21 +31,21 @@ export default function CardPage(props) {
               </p>
               <div className={styles.grid}>
               <Card 
-            name={props.postData.name}
+            name={cardData.name}
             race="human"
-            class={props.postData.class}
-            health={props.postData.health}
-            armor={props.postData.armor}
-            mana={props.postData.mana}
-            strength={props.postData.strength}
-            agility={props.postData.agility}
-            intelligence={props.postData.intelligence}
-            damage={props.postData.damage}
-            crit={props.postData.crit}
-            magic={props.postData.magic}
-            avatar={props.postData.avatar}
-            lvl={props.postData.lvl}
-            attrib={props.postData.attrib}
+            class={cardData.class}
+            health={cardData.health}
+            armor={cardData.armor}
+            mana={cardData.mana}
+            strength={cardData.strength}
+            agility={cardData.agility}
+            intelligence={cardData.intelligence}
+            damage={cardData.damage}
+            crit={cardData.crit}
+            magic={cardData.magic}
+            avatar={cardData.avatar}
+            lvl={cardData.lvl}
+            attrib={cardData.attrib}
             />
       </div>
       <Link href="/">
@@ -57,7 +57,7 @@ export default function CardPage(props) {
   }
 
   export async function getStaticPaths() {
-    const paths = getAllPostIds()
+    const paths = getAllCardIds()
     return {
       paths,
       fallback: false
