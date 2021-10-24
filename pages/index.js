@@ -7,12 +7,9 @@ import Card from '../components/Card'
 
 export async function getStaticProps() {
   var cardIds = Array.from({length: 6}, (_, i) => i + 1)
-  console.log(cardIds)
   var cardArray = Array(6);
   cardIds.forEach((x) => cardArray[x-1] = getCardData(x))
-  //const cardData = getCardData(1)
   const cardData = cardArray;
-  console.log(cardData)
   return {
     props: {
       cardData
@@ -26,6 +23,7 @@ export default function Home({ cardData }) {
       <Head>
         <title>Card Battles</title>
         <meta name="description" content="Battle to be the best!" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
