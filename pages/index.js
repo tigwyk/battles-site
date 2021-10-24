@@ -24,7 +24,7 @@ export default function Home() {
         <div className={styles.grid}>
           <Card 
             name="Billy"
-            race="feline"
+            race="human"
             class="fighter"
             health="200"
             armor="100"
@@ -36,10 +36,11 @@ export default function Home() {
             crit="100"
             magic="100"
             avatar="1"
+            lvl="10"
             />
           <Card 
-            name="Freddy"
-            race="feline"
+            name="Mary"
+            race="human"
             class="cleric"
             health="200"
             armor="100"
@@ -51,10 +52,12 @@ export default function Home() {
             crit="100"
             magic="100"
             avatar="1"
+            lvl="100"
+            attrib="intelligence"
             />
             <Card 
-            name="Mary"
-            race="feline"
+            name="Terence"
+            race="human"
             class="mage"
             health="100"
             armor="50"
@@ -66,10 +69,12 @@ export default function Home() {
             crit="100"
             magic="200"
             avatar="1"
+            lvl="7"
+            attrib="intelligence"
             />
             <Card 
             name="Zeal"
-            race="feline"
+            race="human"
             class="paladin"
             health="100"
             armor="50"
@@ -81,10 +86,11 @@ export default function Home() {
             crit="100"
             magic="200"
             avatar="1"
+            lvl="42"
             />
             <Card 
             name="Klepto"
-            race="feline"
+            race="human"
             class="thief"
             health="100"
             armor="50"
@@ -96,6 +102,8 @@ export default function Home() {
             crit="100"
             magic="200"
             avatar="1"
+            lvl="69"
+            attrib="agility"
             />
           <a
             href="#"
