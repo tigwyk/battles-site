@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image'
 
 
 
@@ -12,7 +12,7 @@ const Card = (props) => {
     
     return (
         <div className="card">
-            <img className="card__img" src={"/img/"+image} alt="warrior" />
+            <Image className="card__img" src={"/img/"+image} alt="class image" width="150%" height="150%"/>
             <span className={"card__lvl " + color}><span className="card__lvl--no">{props.lvl || 0}</span></span>
             <div className="card__proBar">
                 <div className={"card__proBar--fill " + color} style={{ width: fill + "%" }}></div>

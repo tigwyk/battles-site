@@ -1,9 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import Card from '../components/Card'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import { getSortedPostsData } from '../lib/cards'
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+
+export default function Home({ allPostsData }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +34,8 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <Card 
+          <a href="/cards/1">
+            <Card 
             name="Billy"
             race="human"
             class="fighter"
@@ -38,6 +51,8 @@ export default function Home() {
             avatar="1"
             lvl="10"
             />
+            </a>
+            <a href="/cards/2">
           <Card 
             name="Mary"
             race="human"
@@ -55,8 +70,10 @@ export default function Home() {
             lvl="100"
             attrib="intelligence"
             />
+            </a>
+            <a href="/cards/3">
             <Card 
-            name="Terence"
+            name="Tim"
             race="human"
             class="mage"
             health="200"
@@ -72,6 +89,8 @@ export default function Home() {
             lvl="7"
             attrib="intelligence"
             />
+            </a>
+            <a href="/cards/4">
             <Card 
             name="Zeal"
             race="human"
@@ -87,7 +106,10 @@ export default function Home() {
             magic="200"
             avatar="1"
             lvl="42"
+            attrib="strength"
             />
+            </a>
+            <a href="/cards/5">
             <Card 
             name="Klepto"
             race="human"
@@ -105,6 +127,7 @@ export default function Home() {
             lvl="69"
             attrib="agility"
             />
+            </a>
           <a
             href="#"
             className={styles.card}
