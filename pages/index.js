@@ -128,6 +128,25 @@ export default function Home({ allPostsData }) {
             attrib="agility"
             />
             </a>
+            <a href="/cards/6">
+            <Card 
+            name="Lucy"
+            race="human"
+            class="illusionist"
+            health="200"
+            armor="10"
+            mana="100"
+            strength="10"
+            agility="10"
+            intelligence="200"
+            damage="100"
+            crit="100"
+            magic="200"
+            avatar="1"
+            lvl="7"
+            attrib="intelligence"
+            />
+            </a>
           <a
             href="#"
             className={styles.card}
