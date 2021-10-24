@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Card from '../components/Card'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -13,40 +14,104 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to Battles!
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Battle your hero to level up and become the most powerful!
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <Card 
+            name="Billy"
+            race="feline"
+            class="fighter"
+            health="200"
+            armor="100"
+            mana="0"
+            strength="100"
+            agility="100"
+            intelligence="100"
+            damage="100"
+            crit="100"
+            magic="100"
+            avatar="1"
+            />
+          <Card 
+            name="Freddy"
+            race="feline"
+            class="cleric"
+            health="200"
+            armor="100"
+            mana="0"
+            strength="100"
+            agility="100"
+            intelligence="100"
+            damage="100"
+            crit="100"
+            magic="100"
+            avatar="1"
+            />
+            <Card 
+            name="Mary"
+            race="feline"
+            class="mage"
+            health="100"
+            armor="50"
+            mana="100"
+            strength="50"
+            agility="50"
+            intelligence="200"
+            damage="100"
+            crit="100"
+            magic="200"
+            avatar="1"
+            />
+            <Card 
+            name="Zeal"
+            race="feline"
+            class="paladin"
+            health="100"
+            armor="50"
+            mana="100"
+            strength="50"
+            agility="50"
+            intelligence="200"
+            damage="100"
+            crit="100"
+            magic="200"
+            avatar="1"
+            />
+            <Card 
+            name="Klepto"
+            race="feline"
+            class="thief"
+            health="100"
+            armor="50"
+            mana="100"
+            strength="50"
+            agility="50"
+            intelligence="200"
+            damage="100"
+            crit="100"
+            magic="200"
+            avatar="1"
+            />
+          <a
+            href="#"
+            className={styles.card}
+          >
+            <h2>Learn More &rarr;</h2>
+            <p>Discover more about your favourite heroes...</p>
           </a>
 
           <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
+            href="#"
             className={styles.card}
           >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
+            <h2>Get Started &rarr;</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Instantly get your first hero!
             </p>
           </a>
         </div>
@@ -54,13 +119,13 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://www.google.com/search?q=kittens"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image src="/kitten.png" alt="Kitten" width={32} height={32} />
           </span>
         </a>
       </footer>
