@@ -2,7 +2,7 @@ import Web3 from 'web3'
 import { HttpProviderOptions } from 'web3-core-helpers'
 import { AbiItem } from 'web3-utils'
 import { ContractOptions } from 'web3-eth-contract'
-import getRpcUrl from 'utils/getRpcUrl'
+import getRpcUrl from '../utils/getRpcUrl'
 
 const RPC_URL = getRpcUrl()
 const httpProvider = new Web3.providers.HttpProvider(RPC_URL, { timeout: 10000 } as HttpProviderOptions)
