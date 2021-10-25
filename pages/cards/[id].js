@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from '../../styles/Card.module.css'
 import { getAllCardIds, getCardData } from '../../lib/cards'
 import Card from '../../components/Card'
+import { useWeb3React } from "@web3-react/core";
 
 export async function getStaticProps({ params }) {
   const cardData = await getCardData(params.id)
