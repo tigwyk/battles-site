@@ -42,10 +42,9 @@ export default function Home({ cardData }) {
         <h1 className={styles.title}>
           Welcome to Battles!
         </h1>
-
         <p className={styles.description}>
           Battle your hero to level up and become the most powerful!
-        </p>
+        </p><br/>
         <Account triedToEagerConnect={triedToEagerConnect} />
         <div className={styles.grid}>
             {cardData.map((card) => (
