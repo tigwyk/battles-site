@@ -23,7 +23,6 @@ export default function Home({ cardData }) {
       <Head>
         <title>Card Battles</title>
         <meta name="description" content="Battle to be the best!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -38,7 +37,7 @@ export default function Home({ cardData }) {
 
         <div className={styles.grid}>
             {cardData.map((card) => (
-              <a href={"/cards/"+card.id}>
+              <a href={"/cards/"+card.id} key={card.id}>
             <Card 
             name={card.name}
             race={card.race}
@@ -55,6 +54,7 @@ export default function Home({ cardData }) {
             avatar={card.avatar}
             lvl={card.lvl}
             attrib={card.attrib}
+            exp={card.exp}
             />
             </a>
             ))}
