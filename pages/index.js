@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getCardData  } from '../lib/cards'
+import { useEffect, useState, useContext } from 'react';
 import styles from '../styles/Home.module.css'
 import Card from '../components/Card'
 import { useWeb3React } from "@web3-react/core";

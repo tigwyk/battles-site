@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import "../scss/main.scss"
 import { Web3Provider } from "@ethersproject/providers";
 import { Web3ReactProvider } from "@web3-react/core";
-import { ThemeContextProvider } from '../ThemeContext';
+import { ThemeContextProvider } from '../ThemeContext.tsx';
 
 function getLibrary(provider) {
   return new Web3Provider(provider);
