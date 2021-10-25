@@ -18,7 +18,10 @@ const Card = (props) => {
             <div className="card__proBar">
                 <div className={"card__proBar--fill " + color} style={{ width: fill + "%" }}></div>
             </div>
-            <h3>{props.name || "Fighter"}<span>{" the " + props.class || "Warrior"}</span></h3>
+            <h3>{props.name || "NoName"}</h3>
+            <div className="card__class">
+                Class: {props.class || "fighter" }
+            </div>
             <div className="card__table">
                 <div className={"card__table--head " + color}>
                     <span>Dmg</span>

@@ -45,7 +45,7 @@
     &>h3 {
         color: #fff;
         text-align: center;
-        margin: .5rem 0;
+        margin: .2rem 0;
     }
 
     &__table {
@@ -96,7 +96,11 @@
             transition: all .4s;
         }
     }
-
+    &__class {
+        width: 70%;
+        font-size: 1rem;
+        
+    }
     &:hover {
         transform:scale(1.02);
         box-shadow: 0 .5rem 1rem rgba(#000, .4);
