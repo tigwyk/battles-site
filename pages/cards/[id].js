@@ -27,12 +27,11 @@ export default function CardPage({ cardData }) {
               </h1>
       
               <p className={styles.description}>
-               
               </p>
               <div className={styles.grid}>
               <Card 
             name={cardData.name}
-            race="human"
+            race={cardData.race}
             class={cardData.class}
             health={cardData.health}
             armor={cardData.armor}
@@ -46,6 +45,7 @@ export default function CardPage({ cardData }) {
             avatar={cardData.avatar}
             lvl={cardData.lvl}
             attrib={cardData.attrib}
+            exp={cardData.exp}
             />
       </div>
       <Link href="/">

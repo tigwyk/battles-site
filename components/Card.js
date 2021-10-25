@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 const Card = (props) => {
     let fill = (Math.pow(2, props.lvl) * 100 / 2);
+    console.log(fill);
     fill =  (props.exp - fill)/fill*100; // some math to fill tht experience bar.
     let color = props.attrib || "strength";
     let image = `${(props.race).charAt(0)}_${(props.class).slice(0,3)+props.avatar}.png`;
