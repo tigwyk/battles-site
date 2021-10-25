@@ -23,7 +23,6 @@ export default function Home({ cardData }) {
       <Head>
         <title>Card Battles</title>
         <meta name="description" content="Battle to be the best!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
