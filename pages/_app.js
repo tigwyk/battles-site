@@ -1,8 +1,21 @@
 import '../styles/globals.css'
 import "../scss/main.scss"
+import { Web3Provider } from "@ethersproject/providers";
+import { Web3ReactProvider } from "@web3-react/core";
+import { ThemeContextProvider } from '../ThemeContext';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function getLibrary(provider) {
+  return new Web3Provider(provider);
 }
 
-export default MyApp
+function CardBattlesApp({ Component, pageProps }) {
+  return (
+  <Web3ReactProvider getLibrary={getLibrary}>
+  <ThemeContextProvider>
+  <Component {...pageProps} />
+  </ThemeContextProvider>
+  </Web3ReactProvider>
+  );
+}
+
+export default CardBattlesApp
