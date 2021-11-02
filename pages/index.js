@@ -2,14 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getCardData  } from '../lib/cards'
-import { useContext } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react'
 import styles from '../styles/Home.module.css'
 import Page from '../components/layout/Page.tsx'
 import Card from '../components/Card'
-import { useWeb3React } from "@web3-react/core";
-import Account from "../components/Account";
-import useEagerConnect from "../hooks/useEagerConnect";
-import { ThemeContext } from 'styled-components';
 
 export async function getStaticProps() {
   var cardIds = Array.from({length: 6}, (_, i) => i + 1)
@@ -24,12 +20,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ cardData }) {
-
-  const { account, library } = useWeb3React();
-  const triedToEagerConnect = useEagerConnect();
-  const theme = useContext(ThemeContext);
-  const isConnected = typeof account === "string" && !!library;
-
   return (
     <Page>
       <Head>
@@ -45,7 +35,6 @@ export default function Home({ cardData }) {
         <p className={styles.description}>
           Battle your hero to level up and become the most powerful!
         </p><br/>
-        <Account triedToEagerConnect={triedToEagerConnect} />
         <div className={styles.grid}>
             {cardData.map((card) => (
               <a href={"/cards/"+card.id} key={card.id}>

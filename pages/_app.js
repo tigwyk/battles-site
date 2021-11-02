@@ -1,23 +1,15 @@
 import '../styles/globals.css'
 import "../scss/main.scss"
-import { Web3Provider } from "@ethersproject/providers";
-import { Web3ReactProvider } from "@web3-react/core";
-import { ThemeContextProvider } from '../ThemeContext';
-import Menu from '../components/Menu';
-
-function getLibrary(provider) {
-  return new Web3Provider(provider);
-}
+import { ModalProvider } from '@pancakeswap-libs/uikit'
+import { ThemeContextProvider } from '../ThemeContext'
 
 function CardBattlesApp({ Component, pageProps }) {
   return (
-  <Web3ReactProvider getLibrary={getLibrary}>
-  <ThemeContextProvider>
-    
-  <Component {...pageProps} />
-  
-  </ThemeContextProvider>
-  </Web3ReactProvider>
+      <ThemeContextProvider>
+              <ModalProvider>
+                  <Component {...pageProps} />
+                </ModalProvider>
+                </ThemeContextProvider>
   );
 }
 
