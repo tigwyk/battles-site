@@ -1,7 +1,0 @@
-{
-    "functions": {
-      "api/cards.js": {
-        "includeFiles": "card-data/**"
-      }
-    }
-  }
