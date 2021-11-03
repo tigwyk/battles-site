@@ -1,0 +1,10 @@
+{
+    "functions": {
+      "pages/api/cards.js": {
+        "includeFiles": "card-data/**"
+      },
+      "pages/api/cards/[id].js": {
+        "includeFiles": "card-data/**"
+      }
+    }
+  }
