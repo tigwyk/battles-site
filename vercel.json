@@ -1,9 +1,9 @@
 {
     "functions": {
-      "/api/cards.js": {
+      "api/cards.js": {
         "includeFiles": "card-data/**"
       },
-      "/api/cards/[id].js": {
+      "api/cards/[id].js": {
         "includeFiles": "card-data/**"
       }
     }
