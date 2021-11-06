@@ -60,7 +60,7 @@ export default function CardPage({ cardData }) {
   }
 
   export async function getStaticPaths() {
-    const paths = getAllCardIds()
+    const paths = getAllCardIds(cardJSON)
     return {
       paths,
       fallback: false

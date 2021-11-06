@@ -10,11 +10,15 @@ import Card from '../components/Card'
 const cardJSON = require('../lib/card-data.json');
 
 export async function getStaticProps() {
-  const sortedCards = getSortedCardsData();
+  const sortedCards = getSortedCardsData(cardJSON);
+  const test = getCardData(1,cardJSON);
+  /*
   var cardIds = Array.from({length: 6}, (_, i) => i + 1)
   var cardArray = Array(6);
   cardIds.forEach((x) => cardArray[x-1] = getCardData(x,cardJSON))
   const cardData = cardArray;
+  */
+  const cardData = sortedCards;
   return {
     props: {
       cardData
