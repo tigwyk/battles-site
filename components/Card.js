@@ -1,10 +1,7 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Image from 'next/image'
-//import { exportComponentAsPDF, exportComponentAsPNG } from 'react-component-export-image';
 
-const ComponentToPrint = React.forwardRef((props, ref) => {
-    console.log("Props:",props);
-    console.log("Ref:",ref);
+const Card = (props) => {  
     let fill = (Math.pow(2, props.lvl) * 100 / 2);
     console.log(fill);
     fill =  (props.exp - fill)/fill*100; // some math to fill the experience bar.
@@ -12,7 +9,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
     let image = `${(props.race).charAt(0)}_${(props.class).slice(0,3)+props.avatar}.png`;
     require('../public/img/'+image);
     return (
-    <div className="card" ref={ref}>
+        <div className="card">
             <Image className="card__img" src={"/img/"+image} alt="class image" width="150%" height="150%"/>
             <span className={"card__lvl " + color}><span className="card__lvl--no">{props.lvl || 0}</span></span>
             <div className="card__proBar">
@@ -56,17 +53,6 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
                 </div>
             </div>
         </div>
-    )}
-  );
-
-const Card = (props) => {  
-    const componentRef = useRef();
-    //const exportPNG = exportComponentAsPNG(componentRef, { html2CanvasOptions: {backgroundColor: null}});  
-    return (
-        <React.Fragment>
-        <ComponentToPrint ref={componentRef} {...props}/>
-        <button href="#" onClick="">Export as PNG</button>
-        </React.Fragment>
     );
 }
 export default Card;

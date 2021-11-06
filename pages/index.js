@@ -1,16 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getCardData  } from '../lib/cards'
+import { getCardData, getSortedCardsData  } from '../lib/cards'
 import React, { useEffect, Suspense, lazy } from 'react'
 import styles from '../styles/Home.module.css'
 import Page from '../components/layout/Page.tsx'
 import Card from '../components/Card'
 
+const cardJSON = require('../lib/card-data.json');
+
 export async function getStaticProps() {
+  const sortedCards = getSortedCardsData();
   var cardIds = Array.from({length: 6}, (_, i) => i + 1)
   var cardArray = Array(6);
-  cardIds.forEach((x) => cardArray[x-1] = getCardData(x))
+  cardIds.forEach((x) => cardArray[x-1] = getCardData(x,cardJSON))
   const cardData = cardArray;
   return {
     props: {

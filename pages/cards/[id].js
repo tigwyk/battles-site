@@ -4,8 +4,10 @@ import styles from '../../styles/Card.module.css'
 import { getAllCardIds, getCardData } from '../../lib/cards'
 import Card from '../../components/Card'
 
+const cardJSON = require("../../lib/card-data.json");
+
 export async function getStaticProps({ params }) {
-  const cardData = await getCardData(params.id)
+  const cardData = await getCardData(params.id, cardJSON)
   return {
     props: {
       cardData
